@@ -1,0 +1,271 @@
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta charset="utf-8">
+    <title>QASCA: A Quality-Aware Task Assignment System for Crowdsourcing Applications</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="./QASCA/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link href="./QASCA/bootstrap-responsive.css" rel="stylesheet">
+    <!--link href="blinkdb/blinkdb.css" rel="stylesheet"-->
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="http://twitter.github.com/bootstrap/assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-57-precomposed.png">
+ 
+   <script type="text/javascript" async="" src="./QASCA/ga.js"></script><script type="text/javascript">
+
+     var _gaq = _gaq || [];
+       _gaq.push(['_setAccount', 'UA-30241779-1']);
+         _gaq.push(['_trackPageview']);
+
+           (function() {
+                var ga = document.createElement('script'); ga.type =
+                'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ?
+                      'https://ssl' : 'http://www') +
+                    '.google-analytics.com/ga.js';
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(ga, s);
+                          })();
+
+  </script><style type="text/css"></style>
+    </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="./index.html">QASCA</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="./index.html#">Home</a></li>
+              <li class=""><a href="./index.html#System">Architecture</a></li>
+              <li class=""><a href="./index.html#Deployment">Deployment</a></li>
+              <li class=""><a href="./index.html#Example">Example Application</a></li>
+              <li class=""><a href="./index.html#Experiments">Experiments</a></li>
+              <li class=""><a href="./index.html#Works">Publications</a></li>
+                
+              <li><a href="./index.html#About">Codes</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+      <!--div class="hero-unit"-->
+      <header>
+      <div class="inner" align="middle">
+	  <img src="./QASCA/QASCA.jpg" style="width: 300px;">
+          <p></p><h2>QASCA: A Quality-Aware Task Assignment System for Crowdsourcing Applications</h2><p></p>
+              <p></p></div></header>
+      
+      <div class="container">
+          
+          <!-- Main hero unit for a primary marketing message or call to action -->
+          <div class="hero-unit">
+              <p style="text-indent: 2em">
+
+A crowdsourcing system, such as the Amazon Mechanical Turk (AMT), provides a platform for a large number of questions to be answered by Internet workers. Such systems have been shown to be useful to solve problems that are difficult for computers, including entity resolution, sentiment analysis, and image recognition. In this project, we investigate the <I>online task assignment problem</I>: Given a pool of <I>n</I> questions, which of the <I>k</I> questions should be given to a worker? A poor assignment may not only waste time and money, but may also hurt the quality of a crowdsourcing application that depends on the workers’ inputs. 
+                </p>
+                <p style="text-indent: 2em">
+    We propose to consider quality measures (also known as evaluation metrics) that are relevant to an application during the task assignment process. Particularly, we explore how Accuracy and F-score, two widely-used evaluation metrics for crowdsourcing applications, can facilitate task assignment. Since these two metrics assume that the ground truth of a question is known, we study their variants that make use of the probability distributions of workers’ answers. We further investigate <I>online assignment strategies</I>, which enables optimal task assignments. Since these algorithms are expensive, we propose solutions that attain high quality in linear time. We develop a system called the <u>Q</u>uality-Aware Task <u>A</u>ssignment <u>S</u>ystem for <u>C</u>rowdsourcing <u>A</u>pplications (QASCA) on top of AMT. We evaluate our approaches on five real crowdsourcing applications. We found that QASCA is efficient, and attains better result quality (of more than <I>8%</I> improvement) than existing methods.
+              </p>
+          </div>
+      
+         <section id="System">
+	         <div class="page-header">
+	         <h1>System Architecture</h1></div>
+			          <div id="myCarousel" class="carousel slide" style="background-color: #CCCCCC;" align="center">  
+			            <!-- Carousel items -->  
+			          <div class="carousel-inner">  
+			        <div class="active item"><img src="./QASCA/main.png" width="60%"></div>  
+                    <div class="item"><img src="./QASCA/app manager.png" width="60%"></div>  
+			        <div class="item"><img src="./QASCA/web server.png" width="60%"></div>  
+			        <div class="item"><img src="./QASCA/task assignment.png" width="60%"></div>  
+                    <div class="item"><img src="./QASCA/database.png" width="60%"></div>  
+			  </div>  
+			  <!-- Carousel nav -->  
+			  <a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>  
+			  <a class="carousel-control right" href="#myCarousel" data-slide="next">›</a>  
+		    </div> <!-- /container -->
+	
+             
+         </section>
+
+         
+        <section id="Deployment">
+              <div class="page-header">
+                  <hr><h1>Deployment</h1><hr>
+                  <p style="line-height:25px;font-size:20px">Here is the project directory tree of QASCA. <br>
+                  QASCA is deployed on a Ubuntu 10.04.4 system, and in order to run our project, there are some required softwares/programming tools to install. Here are the followings (recommended version in the parenthesis): <br>
+                  Python (2.7.3), Django (1,5), Apache (2.2.24), mod_wsgi (3.4), MySQL (14.14), MySQL-python (1.2.3) and boto library. <br>
+                  </p>
+              </div>
+              <div align="center">
+              <img src="./QASCA/project directory.jpg" alt="projectdirectory" width="60%">
+              </div><br>
+              <p style="line-height:25px;font-size:20px">Having finished installing the above required softwares, in order to deploy a real application, what you need is to <br>
+              (1) configure the "config.ini" file in the publish folder, which contains the database, log and mturk information; <br>
+              (2) create a new folder in the apps folder, and the new folder contains three main files to configure: the Questions file ("questions.json"), the HTML template file ("view.html", "accept.html"), and the Configuration file ("config.ini"). <br>
+              
+              <p style="line-height:25px;text-indent:2em;font-size:20px">(a) "question.json" contains the questions needed to publish, and the questions are organized in a json format; </p>
+              <p style="line-height:25px;text-indent:2em;font-size:20px">(b) "view.html" contains a static html file and the workers will see in the view mode at AMT; </p>
+              <p style="line-height:25px;text-indent:2em;font-size:20px">(c) "accept.html" is a django template file and the workers will see when they accept a HIT at AMT; </p>
+              <p style="line-height:25px;text-indent:2em;font-size:20px">(d) "config.ini" contains parameters related to your deployed app. </p>
+
+              
+             </p>
+              
+        </section>
+          
+          
+          
+          <section id="Example">
+              <div class="page-header">
+                  <hr><h1>Example Application</h1><hr>
+                  <p style="line-height:25px;font-size:20px">
+
+                  We will walk through an example application of QASCA, which shows how to deploy an implementation of entity resolution problem (<I>[1] J. Wang, G. Li, T. Kraska, M. J. Franklin, and J. Feng. Leveraging transitive relations for crowdsourced joins. In SIGMOD Conference, pages 229-240, 2013</I>) in our project.  <br>
+                  
+                  In that paper [1], it leverages transitive relations to address the entity resolution problem. It adopts an iterative approach where in each iteration, it publishes a set of pairs (questions) and derive their results from the crowd, and then apply transitive rule to deduce other candidate pairs. It [1] can deploy the generated questions on our system in each iteration and use our system to get their results. <br>
+                  </p>
+                  
+                  <center><img src="./QASCA/entity resolution.jpg" alt="ER" width="50%"></center> <br>
+                  <p style="line-height:25px;font-size:20px">
+                  Suppose in the first iteration of the algorithm, it generates n = 1000 questions where each question has the labels “equal” and “non-equal”. The requester first creates an application folder in the APP Manager component, in the created folder, the requester needs to deploy three files: <b><I>the Question file, the HTML template file, and the Configuration file</I></b>.
+                  </p>
+                  <p style="line-height:25px;text-indent:2em;font-size:20px">
+                  (1) The Questions File ("question.json") contains questions that are of json-format, and one example file containing two questions is listed as follows:
+                  <center><img src="./QASCA/examplequestion.jpg" alt="ER" width="50%"></center>
+                  </p>
+                  <p style="line-height:25px;text-indent:2em;font-size:20px">
+                  (2) The HTML template file contains two files: "view.html" and "accept.html". One file is a static html that shows what the user will see in the view mode in the AMT, which gives some static examples of the questions that workers will answer. Another file is a dynamical django html file (you can resort to ). Here we show an example of "view.html":
+                  <center><img src="./QASCA/crowder-example.jpg" alt="ER" width="50%"></center>
+                  </p>
+                  <p style="line-height:25px;text-indent:2em;font-size:20px">
+                  (3) The Configuration file ("config.ini") can be specified that each HIT contains k = 10 questions and is paid b=$0.02, and the total number of assignments of HITs is set as m=400 (then each question will be answered m/(n/k) = 4 times on average), the evaluation metric is F-score for "equal" (alpha=0.5). Thus in the "config.ini" of the newly created application folder, the parameters should be set as follows:
+                  <center><img src="./QASCA/configures.jpg" alt="ER" width="80%"></center>
+                  </p>
+                  
+                  <p style="line-height:25px;font-size:20px">
+                  After publishing all HITs by calling "publish.py" in publish folder, two processes will occur based on different requests: <br><br>
+                  HIT request process: When a worker requests a HIT , Web Server acquires the worker id from AMT and passes it to Task Assignment, which identifies k = 10 questions based on the specified evaluation metric (F-score for label "equal" where alpha=0.5) in APP Manager, and returns a HIT consisting of the identified 10 questions to the worker. <br> <br>
+                  HIT completion process: When a worker completes a HIT, Web Server updates the answer set, the question and worker model. After obtaining the answers of all m=400 HITs, QASCA terminates and returns the result for each question based on the question model (in Database) and the specified evaluation metric (in App Manager). <br><br>
+                  
+                  Then after collecting the results from QASCA, the algorithm [1] will conduct transitive rules to the answered questions. Then it [1] comes to the second iteration and can again use our system for its generated questions. <br>
+                
+                </p>
+          </div></section>
+
+          
+          
+          <section id="Experiments">
+              <div class="page-header">
+                  <hr><h1>Experimental Result</h1><hr>
+                  <p style="line-height:25px;font-size:20px">
+                  We perform End-to-End system experiments using five real world datasets with two existing systems: <b>CDAS</b> (<I>[2] X. Liu, M. Lu, B. C. Ooi, Y. Shen, S. Wu, and M. Zhang. Cdas: A crowdsourcing data analytics system. PVLDB, 5(10):1040-1051, 2012</I>) and <b>Askit!</b> (<I>[3] R. Boim, O. Greenshpan, T. Milo, S. Novgorodov, N. Polyzotis, and W. C. Tan. Asking the right questions in crowd data sourcing. In ICDE, pages 1261-1264, 2012</I>). We also set a reasonable <b>Baseline</b> method, and two other methods (<b>MaxMargin</b> and <b>ExpLoss</b>) in the paper. You can refer to our paper below for more details.<br>
+                  The result quality for the first two applications are evaluated in Accuracy, and the datasets are FS (Film Poster, extracted from IMBD: <I>[4] http://www.imdb.com/</I>) and SA (Sentiment Analysis, extracted from a public dataset: <I>[5]  http://www.sananalytics.com/lab/twitter-sentiment/</I>) : <br> 
+                  </p>
+                  <center><img src="./QASCA/accuracy.png" alt="accuracy" width="45%"></center><br>
+                  <p style="line-height:25px;font-size:20px">
+                  The result quality for the other three applications are evaluated in F-score(with different alpha) and the datasets are ER (Entity Resolution, extracted from Abt-Buy: <I>[6] http://dbs.uni-leipzig.de/file/Abt-Buy.zip</I>), PSA (Positive Sentiment Analysis, extracted from [5]) and NSA (Negative Sentiment Analysis, extracted from [5]): 
+                  </p>
+                  <center><img src="./QASCA/fscore.png" alt="fscore" width="70%"></center><br>
+                  <p style="line-height:25px;font-size:20px">
+                  Here is the final result (when all HITs are finished) for all five applications, which shows that QASCA improves more than 8% compared with existing approaches (i.e., Baseline, CDAS, Askit!, MaxMargin and ExpLoss). <br>
+                  </p>
+                  <center><img src="./QASCA/final-result.png" alt="finalresult" width="50%"></center><br>
+                  <p style="line-height:25px;font-size:20px">
+                  </p>
+                </small></h1><br>
+          </div></section>
+          
+          
+          
+      <section id="Works">
+              <div class="page-header">
+              <h1>Publications</h1><hr>
+              
+			   <p style="line-height:25px;font-size:20px">
+               Yudian Zheng, Jiannan Wang, Guoliang Li, Reynold Cheng, Jianhua Feng. <br> <a href="http://i.cs.hku.hk/~ydzheng2/QASCA/QASCA-SIGMOD.pdf"> QASCA: A Quality-Aware Task Assignment System for Crowdsourcing Applications.</a>
+        [ <a href="http://dblp.uni-trier.de/rec/bibtex/conf/sigmod/ZhengWLCF15">bib</a> ]       <br>In SIGMOD 2015, Full Paper, Pages 1031-1046, May 31-June 4, Melbourne, Australia. 
+        <br>
+        [<a href="http://i.cs.hku.hk/~ydzheng2/QASCA/" target="_blank">Project Website</a>]
+        [<a href="http://i.cs.hku.hk/~ydzheng2/QASCA/QASCA-slides.pdf" target="_blank">Slides</a>]
+        [<a href="http://i.cs.hku.hk/~ydzheng2/QASCA/QASCA-poster.pdf" target="_blank">Poster</a>]        
+        
+           </p>
+              
+			  <br>
+			   <p style="line-height:25px;font-size:20px">
+              Yudian Zheng, Guoliang Li, Reynold Cheng.  
+              <br> <a href="http://i.cs.hku.hk/~ydzheng2/docs.pdf"> DOCS: A Domain-Aware Crowdsourcing System Using Knowledge Bases. </a> 
+              [ <a href="http://dblp.uni-trier.de/rec/bibtex/journals/pvldb/ZhengLC16">bib</a> ]<br>
+               In VLDB 2016, Vol 10, Issue 4, Pages 361-372, Full Paper, Present in VLDB 2017, Aug 28 - Sep 1, Munich, Germany. <br>
+               </p>
+
+              </div>
+
+     </section>
+          
+          
+          
+          <section id="About">
+              <div class="page-header">
+                  <h1>Codes</h1><hr>
+                  <p style="line-height:25px;font-size:20px">
+                  We have open-sourced the implementations of online task assignment system on top of Amazon Mechanical Turk (<a href="https://github.com/TsinghuaDatabaseGroup/CrowdOTA">github code</a>). 
+                      <br><br>
+                      If you have any comments or questions, please feel free to email us at: <a href="mailto:ydzheng2@cs.hku.hk">ydzheng2 [AT] cs.hku.hk</a>.
+                      <br><br>
+                  </p>
+                  </div>
+          </section>
+
+
+    </div>
+	
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./QASCA/jquery.js"></script>
+    <script src="./QASCA/bootstrap-transition.js"></script>
+    <script src="./QASCA/bootstrap-alert.js"></script>
+    <script src="./QASCA/bootstrap-modal.js"></script>
+    <script src="./QASCA/bootstrap-dropdown.js"></script>
+    <script src="./QASCA/bootstrap-scrollspy.js"></script>
+    <script src="./QASCA/bootstrap-tab.js"></script>
+    <script src="./QASCA/bootstrap-tooltip.js"></script>
+    <script src="./QASCA/bootstrap-popover.js"></script>
+    <script src="./QASCA/bootstrap-button.js"></script>
+    <script src="./QASCA/bootstrap-collapse.js"></script>
+    <script src="./QASCA/bootstrap-carousel.js"></script>
+    <script src="./QASCA/bootstrap-typeahead.js"></script>
+
+  
+
+
+</body></html>

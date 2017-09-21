@@ -1,0 +1,367 @@
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta charset="utf-8">
+    <title>Truth Inference in Crowdsourcing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="./static/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+        .content p {
+            line-height: 25px;
+            font-size: 20px;
+        }
+        pre {
+            margin-left: 20px;
+            margin-right: 20px;
+            font-size: 14px;
+            line-height: 1.4em;
+        }
+
+        li {
+            line-height: 25px;
+            font-size: 17px;
+        }
+    </style>
+    <link href="./static/bootstrap-responsive.css" rel="stylesheet">
+    <!--link href="blinkdb/blinkdb.css" rel="stylesheet"-->
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="http://twitter.github.com/bootstrap/assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+          href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+          href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed"
+          href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-57-precomposed.png">
+
+    <script type="text/javascript" async="" src="./static/ga.js"></script>
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-30241779-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type =
+                    'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ?
+                            'https://ssl' : 'http://www') +
+                    '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+    <style type="text/css"></style>
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="./index.html">Truth Inference in Crowdsourcing</a>
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li class="active"><a href="./index.html#">Home</a></li>
+                    <li class=""><a href="./index.html#Usage">Program Usage</a></li>
+                    <li class=""><a href="./index.html#Project">Project Structure</a></li>
+                    <li class=""><a href="./index.html#Downloads">Downloads</a></li>
+                    <li class=""><a href="./index.html#Results">Reproducing Results</a></li>
+                    <li class=""><a href="./index.html#Publications">Publications</a></li>
+                    <li class=""><a href="./index.html#Contacts">Contacts</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<!--div class="hero-unit"-->
+<header>
+    <div class="inner" align="middle">
+        <p></p><p></p>
+        <h1>Truth Inference in Crowdsourcing: Is the Problem Solved?</h1> <p></p>
+        <h2>An Experimental Evaluation on Truth Inference Methods in Crowdsourcing</h2>
+        <p></p></div>
+</header>
+
+<div class="container">
+
+    <!-- Main hero unit for a primary marketing message or call to action -->
+    <div class="hero-unit">
+        <p style="text-indent: 2em">
+
+Crowdsourcing has emerged as a novel problem-solving paradigm, which facilitates addressing problems that are hard for computers, e.g., entity resolution and sentiment analysis. However due to the openness of crowdsourcing, workers may yield low-quality answers, and a redundancy-based method is widely employed, which first assigns each task to multiple workers and then infers the correct answer (called truth) for the task based on the answers of the assigned workers. A fundamental problem in this method is Truth Inference, which decides how to effectively infer the answer. Recently the database community and data mining community independently study this problem and propose various algorithms. However, these algorithms are not compared extensively under the same framework and it is hard for practitioners to select appropriate algorithms. To alleviate this problem, we provide a detailed survey on 17 existing algorithms and perform a comprehensive evaluation using 5 real datasets. We make all codes and datasets public for future research. Through experiments we find that existing algorithms are not stable across different datasets and there is no algorithm that outperforms others consistently. We believe that the truth inference problem is not fully solved, and identify the limitations of existing algorithms and point out promising research directions.
+        </p>
+
+    </div>
+
+
+    <section id="Usage">
+        <div class="page-header">
+            <hr>
+            <h1>Program Usage</h1>
+        </div>
+        <div class="content">
+            <p>If you would like to run a method on a crowdsourced dataset (with workers' answers), then a direct way is to just execute <code>run.py</code> in the downloaded project (see Downloads section below) with four parameters: (1) &#39;method_file_path&#39;, (2) &#39;answer_file_path&#39;, (3) &#39;result_file_path&#39;, and (4) &#39;task type&#39;. Next we introduce the four parameters in detail.</p>
+            <p>Parameters:</p>
+            <ol>
+                <li>&#39;method_file_path&#39;: the path of the algorithm source file. Note that we provide all 17 algorithms' source codes (as compared in the paper) in the <code>methods</code> folder, and each method's source file is always the file <code>method.py</code> under respective folders mentioned in the table below. <br>
+                For example, if you would like to run D&amp;S method as mentioned in the paper, then it is in fact implemented in the file  <code>methods/c_EM/method.py</code>. Similarly for other methods, you can just replace <code>c_EM</code> with the corresponding folder (can be found in the table below) in the above file path. 
+                </li>
+
+            <table class="table table-bordered table-striped table-hover table-responsive">
+                <thead>
+                <tr>
+                    <th style="text-align:center">Methods</th>
+                    <th style="text-align:center">Task Types</th>
+                    <th style="text-align:center">Folder</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td style="text-align:center">MV</td>
+                    <td style="text-align:center">Decision-Making, Single_Choice</td>
+                    <td style="text-align:center">c_MV</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center">GLAD</td>
+                    <td style="text-align:center">Decision-Making, Single_Choice</td>
+                    <td style="text-align:center">c_GLAD</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center">D&amp;S</td>
+                    <td style="text-align:center">Decision-Making, Single_Choice</td>
+                    <td style="text-align:center">c_EM</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center">Minimax</td>
+                    <td style="text-align:center">Decision-Making, Single_Choice</td>
+                    <td style="text-align:center">l_minimax</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center">BCC</td>
+                    <td style="text-align:center">Decision-Making, Single_Choice</td>
+                    <td style="text-align:center">l_BCC</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center">CBCC</td>
+                    <td style="text-align:center">Decision-Making, Single_Choice</td>
+                    <td style="text-align:center">l_CBCC</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center">LFC</td>
+                    <td style="text-align:center">Decision-Making, Single_Choice</td>
+                    <td style="text-align:center">l_LFCbinay, l_LFCmulti</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center">CATD</td>
+                    <td style="text-align:center">Decision-Making, Single_Choice, Numeric</td>
+                    <td style="text-align:center">c_CATD</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center">PM</td>
+                    <td style="text-align:center">Decision-Making, Single_Choice, Numeric</td>
+                    <td style="text-align:center">c_PM-CRH</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center">Multi</td>
+                    <td style="text-align:center">Decision-Making</td>
+                    <td style="text-align:center">c_multidimensional</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center">KOS</td>
+                    <td style="text-align:center">Decision-Making</td>
+                    <td style="text-align:center">l_KOS-1</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center">VI-BP</td>
+                    <td style="text-align:center">Decision-Making</td>
+                    <td style="text-align:center">l-VI-BP-2</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center">VI-MF</td>
+                    <td style="text-align:center">Decision-Making</td>
+                    <td style="text-align:center">l_VI-MF-2</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center">LFC_N</td>
+                    <td style="text-align:center">Numeric</td>
+                    <td style="text-align:center">l_LFCcont</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center">Mean</td>
+                    <td style="text-align:center">Numeric</td>
+                    <td style="text-align:center">l_mean</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center">Median</td>
+                    <td style="text-align:center">Numeric</td>
+                    <td style="text-align:center">l_median</td>
+                </tr>
+                </tbody>
+            </table>
+
+                <li>&#39;answer_file_path&#39;: the path of the answer file.
+                The format of answer file (i.e., a <code>csv</code> file) is: <br>
+                (1) the first line is always &#39;question,worker,answer&#39;; <br>
+                (2) the lines followed will be the instances of &#39;question,worker,answer&#39;, indicating that worker has answered question with the answer. <br> 
+                Next we show an example answer file:  
+                <pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>question,worker,answer&nbsp;&nbsp;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>36618,896,0&nbsp;&nbsp;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>11619,896,1&nbsp;&nbsp;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>36620,896,1&nbsp;&nbsp;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>36621,896,1&nbsp;&nbsp;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>36622,896,1</span></span></span></div></pre>
+                </li>
+                <li>&#39;result_file_path&#39;: the path of result file, containing the inferred truth of the algorithm on the above answer file. The result file is a <code>csv</code> file, and each line contains a question and its inferred truth.
+                </li>
+                <li>&#39;task type&#39;: it can only be <strong>Decision-Making</strong>, <strong>Single_Choice</strong>, or <strong>Numeric</strong>, indicating different task types. </li>
+            </ol>
+            <p>Let us now give an example as follows: <br>
+            <code>python run.py methods/c_EM/method.py ./demo_answer_file.csv ./demo_result_file.csv decision-making</code> <br> 
+            It will invoke <strong>D&amp;S</strong> algorithm to read &#39;./demo_answer_file.csv&#39; as the input (the tasks are &#39;decision-making&#39; tasks), and the output will be in the file &#39;./demo_result_file.csv&#39;.</p>
+            
+        </div>
+
+    </section>
+
+
+ <section id="Project">
+        <div class="page-header">
+            <h1>Project Structure</h1></div>
+        <p style="line-height:25px;font-size:20px;text-indent:0em">
+            The main files of the project are as follows:
+
+        <ul>
+            <li>truth inference crowdsourcing methods:
+                <table style="margin: 15px 20px;">
+                    <tr>
+                        <td><code>methods</code> folder:</td>
+                        <td>folder that stores crowdsourced truth inference methods, for experiments in Section 6.3.1.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>qualification_methods</code> folder:</td>
+                        <td>folder that stores the truth inference methods incorporating qualification test, for experiments in Section 6.3.2.</td>
+                    </tr>
+                    <tr>
+                        <td><code>truth_methods</code> folder:</td>
+                        <td>folder that stores the truth inference methods incorporating hidden test, for experiments in Section 6.3.3.</td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <code>datasets</code> folder: folder that store all the 5 datasets used in the paper (You can refer to  <a href="http://i.cs.hku.hk/~ydzheng2/crowd_survey/datasets.html">here</a>, which lists our maintained crowdosurced public datasets).
+            </li>
+            <li>
+                <code>output</code> folder: folder that stores the outputs of 3 experiments.
+            </li>
+            <li><code>exp-*.py</code> file: python scripts for experiments.</li>
+            <li><code>config.ini:</code> configuration file for experiments.</li>
+        </ul>
+        </p>
+    </section>
+
+    <section id="Downloads">
+        <div class="page-header">
+            <hr>
+            <h1>Downloads</h1>
+        </div>
+        <div class="content">
+            <p>You can download our <a href="truth_inference_crowd.zip">project</a> and <a href="datasets.zip">complete datasets</a>.</p>
+        </div>
+    </section>
+
+    <section id="Results">
+        <div class="page-header">
+            <hr>
+            <h1>Reproducing Results</h1>
+        </div>
+        <div class="page-header">
+            <p style="line-height:25px;text-indent:2em;font-size:20px"> After downloading our project, you can get the
+                results presented in our paper simply by executing corresponding programs. There are totally 9 python
+                program scripts for 3 different experiments (Sections 6.3.1, 6.3.2, 6.3.3) involved with all different task types. For example, <code>exp1_decisionmaking.py</code>
+                is for the first experiment (Section 6.3.1) w.r.t. decision-making tasks. When the execution finishes,
+                you can find the results separated by datasets under the "output" folder.
+            </p>
+            <p style="line-height:25px;text-indent:2em;font-size:20px"> 
+            Our experiments are run in Ptyhon 2.7 on a Ubuntu server with Intel 2.40 GHz processor and 60 GB memory.
+            </p>
+        </div>
+
+    </section>
+
+    <section id="Publications">
+        <div class="page-header">
+            <hr>
+            <h1>Publications</h1>
+        </div>
+        
+        <div class="content">
+        <p>
+              Yudian Zheng, Guoliang Li, Yuanbing Li, Caihua Shan, Reynold Cheng. 
+               <br> <a href="http://i.cs.hku.hk/~ydzheng2/crowd_truth_inference/crowd_truth_infer.pdf">Truth Inference in Crowdsourcing: Is the Problem Solved?</a> <br> 
+              In VLDB 2017, Vol 10, Isuue 5, Pages 541-552, Full Paper, Present in VLDB 2017, Aug 28 - Sep 1, Munich, Germany. <br>
+        </p>
+        </div>
+        
+        <div class="content">
+        <p>
+               Guoliang Li, Yudian Zheng, Ju Fan, Jiannan Wang, Reynold Cheng.
+               <br><a href="http://i.cs.hku.hk/~ydzheng2/tutorial/sigmod_tutorial.pdf">Crowdsourced Data Management: Overview and Challenges. </a><br>
+               In SIGMOD 2017, Tutorial (3 hours), May 14th - 19th, Chicago, IL, USA. <br>
+        </p>  
+        </div>
+    </section>
+
+    <section id="Contacts">
+        <div class="page-header">
+            <hr>
+            <h1>Contacts</h1>
+        </div>
+        <div class="content">
+            <p>The project is done by <a href="http://i.cs.hku.hk/~ydzheng2/">Yudian Zheng</a> (The University of Hong Kong), <a href="http://dbgroup.cs.tsinghua.edu.cn/ligl/">Guoliang Li</a> (Tsinghua University), <a href="http://jasonwillfly.github.io/">Yuanbing Li</a> (Tsinghua University), <a href="http://i.cs.hku.hk/~chshan/">Caihua Shan</a> (The University of Hong Kong) and <a href="http://i.cs.hku.hk/~ckcheng/">Reynold Cheng</a> (The University of Hong Kong).</p> 
+            <p>If you have any questions, feel free to contact <a href="http://i.cs.hku.hk/~ydzheng2/">Yudian Zheng</a> (zhydhkcws AT gmail dot com).</p>
+        </div>
+    </section>
+
+</div>
+
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./static/jquery.js"></script>
+<script src="./static/bootstrap-transition.js"></script>
+<script src="./static/bootstrap-alert.js"></script>
+<script src="./static/bootstrap-modal.js"></script>
+<script src="./static/bootstrap-dropdown.js"></script>
+<script src="./static/bootstrap-scrollspy.js"></script>
+<script src="./static/bootstrap-tab.js"></script>
+<script src="./static/bootstrap-tooltip.js"></script>
+<script src="./static/bootstrap-popover.js"></script>
+<script src="./static/bootstrap-button.js"></script>
+<script src="./static/bootstrap-collapse.js"></script>
+<script src="./static/bootstrap-carousel.js"></script>
+<script src="./static/bootstrap-typeahead.js"></script>
+
+
+</body>
+</html>

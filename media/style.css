@@ -1,0 +1,42 @@
+body {
+	font-size: 16px;
+	font-weight:400;
+	/*color: #6E6D6D;	*/
+	color: #606860;	
+	font:italic arial,sans-serif;
+}
+.container {
+	margin-left: 50px;
+}
+
+a {
+	color: #00BFFF;
+}
+
+a:visited {
+	color: #00BFFF;
+}
+
+mark {
+	background: #FF9;
+}
+
+b {
+	font-weight: 700;
+}
+
+hr {
+	margin-top: 5px;
+}
+
+.top-buffer {
+	margin-top: 10px;
+}
+
+.bottom-buffer {
+	margin-bottom: 20px;
+}
+
+.number-font {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}

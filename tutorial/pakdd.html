@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<style>
+	.STYLE4 {font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; color: #3333FF; font-size: x-large; font-style: italic; }
+	.STYLE5 {
+		color: #000066;
+		font-weight: bold;
+	}
+	.STYLE7 {font-family: 'Trebuchet MS', arial, sans-serif; font-weight: bold; font-size: x-large;}
+	.STYLE8 {font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; color: #000066; font-size: large; font-style: italic; }
+	a:link {
+		text-decoration: none;
+	}
+	a:visited {
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: none;
+	}
+	a:active {
+		text-decoration: none;
+	}
+	.STYLE11 {
+		font-size: 12pt;
+		font-weight: bold;
+	}
+	.STYLE13 {
+		font-family: Georgia, "Times New Roman", Times, serif;
+		font-weight: bold;
+		color: #CC0000;
+	}
+	.STYLE14 {
+		color: #CC0000;
+		font-size: x-large;
+		font-family: Georgia, "Times New Roman", Times, serif;
+		font-weight: bold;
+	}
+	.STYLE16 {color: #000066}
+	.STYLE17 {
+		font-size: large;
+		font-weight: bold;
+	}
+	.STYLE19 {font-size: x-large}
+	</style>
+</head>
+
+<body style="width:90%;margin:0 auto;">
+
+<div>
+	<h2 style="font-weight:normal;color:#0000FF;font-size:1.6em">
+		<span class="STYLE7">
+			<a href="http://pakdd2014.pakdd.org/">PAKDD 2014</a>
+			<span class="STYLE16"> Tutorial </span>
+		</span>
+	</h2>
+	<h2 class="STYLE4"> 
+		<span class="STYLE7" style="font-size:x-large"> Managing the Quality of Crowdsourced Databases  </span>
+	</h2>
+	<p class="STYLE8">Reynold Cheng and Yudian Zheng<br> {ckcheng, ydzheng2}@cs.hku.hk  <br>The University of Hong Kong </p>
+</div>
+
+<div>
+	<hr>
+	<span class="STYLE13" style="font-size:x-large">Abstract</span>
+	<div>
+		<p>The tutorial has been held on May 16th, 8:30-10:30 in the East Gate Room (B1), Shangri-La's Far Eastern Plaza Hotel, Tainan, Taiwan, PAKDD conference.</p>
+		<p>Crowdsourcing systems, such as the Amazon Mechanical Turk (AMT), CrowdFlowers, and Facebook, have attracted a lot of interest from the academia and industry. On these Internet-based platforms, a human worker performs jobs such as rating a physician, com-menting a product, and translating a sentence. These tasks are often difficult for a computer but easier for a human. Due to the growth of the Internet, a large amount of human-provided (or crowdsourced) information has been obtained, which enables interesting applications like product recommendation and spam detection.</p>
+		<p>In the first part of the tutorial, we first introduce the concepts of crowdsourcing by giving several successful applications in different fields, such as CV, OCR, NLP and so on. Based on these successful applications, we observed that the crowdsourced tasks can be viewed in two dimensions: the format of tasks and the nature of crowdsourced tasks. The format of tasks can be classified into three categories: binary choice question (BCQ), multiple choice question (MCQ) and open question, while the nature of tasks can be classified into two categories: question with ground truth and quesiton without ground turth. Then we give serveral examples that can correspond to specific category in these two dimentsion. </p>
+        <p>In the second part of the tutorial, we summarize the general architecture of crowdsourcing applications, which consist of three components: answer integration, task assignment and database storing crowdsourced data. We demonstrate two example applications (our work respectively published in ICDE'13 and CIKM'13) corresponding to specific categories based on the two dimensional classification of crowdsourced tasks. After introducing our two example work, we summarize how they implement different components in our proposed general architecture. At last we talk about three challenges in crowdsourcing.</p>
+		<p>The objective of the tutorial is for the reader to know the concept of crowdsourcing, and how to use it in famous crowdsourcing platforms (i.e., Amazon Mechanical Turk). We explain why crowdsourced database can be used to store the crowdsourced information and list several challenges in the future. </p>
+	</div>
+</div>
+
+<div>
+	<hr>
+	<span class="STYLE14">Tutorial Outline</span> 
+	<span class="STYLE19">[<a href="http://i.cs.hku.hk/~ydzheng2/tutorial/taiwannew.pdf">Slides</a>] </span>
+	<div>
+		<blockquote>
+			<p class="STYLE8">I Introduction (10 mins) </p>
+			<ul>
+			  <li> Overview of crowdsourcing and its applications</li>
+			</ul>
+			<p class="STYLE8">II Crowdsourcing Systems (10 mins) </p>
+			<ul>
+			  <li> Introduction to crowdsourcing platforms and databases</li>
+			</ul>
+			<p class="STYLE8">III Quality of Crowdsourced Applications (70 mins) </p>
+			<ul>
+			  <li>A classification of crowdsourcing tasks</li>
+              <li>Human effort optimization for multiple choice questions</li>
+			  <li>Human effort optimisation for tagging tasks</li>
+			</ul>
+			<p class="STYLE8">V Conclusions and Q&amp;A (15 mins) </p>
+		</blockquote>
+	</div>
+</div>
+
+<div>
+	<hr>
+    <span class="STYLE14">Presenters</span>
+    <div>
+		<p><a href="http://i.cs.hku.hk/~ckcheng/" class="STYLE17">Reynold Cheng</a> is an Associate Professor of the Department of Computer Science in the University of Hong Kong. He was an Assistant Professor in HKU in 2008-11. He received his BEng (Computer Engineering) in 1998, and MPhil (Computer Science and Information Systems) in 2000, from the Department of Computer Science in the University of Hong Kong. He then obtained his MSc and PhD from Department of Computer Science of Purdue University in 2003 and 2005 respectively. Dr. Cheng was an Assistant Professor in the Department of Computing of the Hong Kong Polytechnic University during 2005-08. He was a visiting scientist in the Institute of Parallel and Distributed Systems in the University of Stuttgart during the summer of 2006. He was granted an Outstanding Young Researcher Award 2011-12 by HKU. He was the recipient of the 2010 Research Output Prize in the Department of Computer Science of HKU. He also received the U21 Fellowship in 2011. He received the Performance Reward in years 2006 and 2007 awarded by the Hong Kong Polytechnic University. He is the Chair of the Department Research Postgraduate Committee, and is the Vice Chairperson of the ACM (Hong Kong Chapter). He is a member of the IEEE, the ACM, the Special Interest Group on Management of Data (ACM SIGMOD), the UPE (Upsilon Pi Epsilon Honor Society). He is also a guest editor for a special issue in TKDE. He is a keynote speaker in the First International Workshop on Quality of Context (QuaCon ’09). He received an Outstanding Service Award in the CIKM 2009 conference. He has served as PC members and reviewer for international conferences and journals including TODS, TKDE, TMC, VLDBJ, IS, DKE, KAIS, VLDB, ICDE, ICDM, DEXA and DASFAA. </p>
+		<p><a href="http://i.cs.hku.hk/~ydzheng2/" class="STYLE17">Yudian Zheng</a> is a 1st year Ph.D. student under the supervision of Dr. Reynold Cheng. He graduated from Nanjing University in July, 2013. In his undergraduate study, he joined the LAMDA group and was supervised by Dr. Yang Yu to research on boosting algorithms from March, 2012 to March 2013. And he finished his crowdsourcing project under the supervision of Jiannan Wang and Dr. Guoliang Li in Tsinghua University from March 2013 to September 2014. In the PAKDD tutorial, he assisted Dr. Reynold Cheng in finishing the powerpoints.</p>
+    </div>
+</div>
+
+<div>
+	<hr>
+	<span class="STYLE14">Sample References</span>
+	<div>
+	  <p>1. X. S. Yang, D. W. Cheung, L. Mo, R. Cheng, and B. Kao. On incentive-based tagging. 
+        In Proc. of ICDE, pages 685-696. 2013<br>
+		2. Siyu Lei, Xuan S. Yang, Luyi Mo, Silviu Maniu, Reynold Cheng  iTag: Incentive-Based Tagging. 
+        ICDE 2014 demo.<br>
+		3. M. J. Franklin, D. Kossmann, T. Kraska, S. Ramesh, and R. Xin. Crowddb: answering queries with crowdsourcing. In SIGMOD Conference, pages 61-72, 2011.<br>
+		4. Ipeirotis, P. G. (2010a). Analyzing the Amazon Mechanical Turk marketplace. ACM XRDS, 17, 16–21.<br>
+		5. X. Liu, M. Lu, B. C. Ooi, Y. Shen, S. Wu, and M. Zhang. Cdas: A crowdsourcing data analytics system.PVLDB, 5(10):1040-1051, 2012.<br>
+        6. http://i.cs.hku.hk/~ckcheng/talks/ICDE2013-tagging.pptx<br>
+		7. http://i.cs.hku.hk/~lymo/paper/cikm13.pptx<br>
+		8. http://www.just.edu.jo/~amerb/teaching/2-12-13/cs728/Crowdsourcing.pdf<br>
+	</div>
+</div>
+
+</body>
+</html>

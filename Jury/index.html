@@ -1,0 +1,291 @@
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta charset="utf-8">
+    <title>Optimal Jury Selection System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="./Jury/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link href="./Jury/bootstrap-responsive.css" rel="stylesheet">
+    <!--link href="blinkdb/blinkdb.css" rel="stylesheet"-->
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="http://twitter.github.com/bootstrap/assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-57-precomposed.png">
+ 
+   <script type="text/javascript" async="" src="./Jury/ga.js"></script><script type="text/javascript">
+
+     var _gaq = _gaq || [];
+       _gaq.push(['_setAccount', 'UA-30241779-1']);
+         _gaq.push(['_trackPageview']);
+
+           (function() {
+                var ga = document.createElement('script'); ga.type =
+                'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ?
+                      'https://ssl' : 'http://www') +
+                    '.google-analytics.com/ga.js';
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(ga, s);
+                          })();
+
+  </script><style type="text/css"></style>
+    </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="./index.html">Optimal Jury Selection</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="./index.html#">Home</a></li>
+              <li class=""><a href="./index.html#System">System Overview</a></li>
+              <li class=""><a href="./index.html#Strategy">Optimal Strategy</a></li>
+              <li class=""><a href="./index.html#JSP">JSP</a></li>
+              <li class=""><a href="./index.html#Extensions">Extensions</a></li>
+              <li class=""><a href="./index.html#Experiments">Experiments</a></li>
+              <li class=""><a href="./index.html#Works">Works</a></li>
+              
+              <li><a href="./index.html#About">About</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+      <!--div class="hero-unit"-->
+      <header>
+      <div class="inner" align="middle">
+	  <img src="./Jury/jury.jpg" style="width: 700px;">
+         <!-- <p></p><h2>Optimal Jury Selection System</h2><p></p> -->
+              <p></p></div></header>
+      
+      <div class="container">
+          
+          <!-- Main hero unit for a primary marketing message or call to action -->
+          <div class="hero-unit">
+              <p style="text-indent: 2em">
+
+      Recent advances in crowdsourcing technologies enable computationally challenging tasks (e.g., sentiment analysis and entity resolution) to be performed by Internet workers. Upon finishing a task, the worker is given a monetary reward. A fundamental question is: how should workers be selected, so that the tasks in hand can be accomplished successfully and economically? In this paper, we study the Jury Selection Problem, or JSP: Given a monetary budget, and a set of decision-making tasks (e.g., “Is Bill Gates the CEO of Microsoft now?”), return the set of workers (called jury), such that their answers yield the highest “Jury Quality” (or JQ). Existing JSP solutions make use of the Majority Voting (MV) strategy, which decides the answer chosen by the largest number of jurors. We show that MV does not yield the best solution for JSP. We further show that among various voting strategies, Bayesian Voting (BV) facilitates JSP to be answered optimally. We then examine how to solve JSP based on BV. This is technically challenging, since computing the JQ with BV is NP-hard. We solve this problem by proposing an approximate algorithm that is computationally efficient. We extend our solution by considering the task owner’s “belief” (or prior) on the answers of the tasks. Experiments on synthetic and real datasets show that our new approach is consistently better than the best JSP solution known. Our approximate JQ computation algorithm is also highly accurate, yielding an error of 1% or less.
+                </p>
+               
+          </div>
+         
+         
+         <section id="System">
+              <div class="page-header">
+                  <hr><h1>System Overview</h1><hr>
+                  <div align="center">
+                    <img src="./Jury/system.jpg" alt="projectdirectory" width="100%">
+                  </div><br>
+              </div>
+              <div class="page-header">
+                  <p style="line-height:25px;text-indent:2em;font-size:20px"> The above figure illustrates our crowdsourcing system, which we called the <b>“Optimal Jury Selection System”</b>. In this system, the task provider published a decision-making tasks. Then, based on the the jurors’ information (i.e., their quality and cost requirements), a “budget-quality table” is generated. In this table, each row contains <I><U>the value of a budget, the optimal jury set, and its quality and the required budget</U></I> for the optimal jury set. Based on this table, the task provider can conveniently decide the best budget-quality combination. 
+                  </p>
+                  <p style="line-height:25px;text-indent:2em;font-size:20px"> For example, she may deem that increasing the budget from 15 units to 20 units is not worthwhile, since the quality increases by around 2.5% only. In this example, the task provider selects the jury set {B,F,G} that is the best under a budget of 15 units. The chosen jury set costs her 14 units. Another interesting observation is that a task provider can now allocate the budget more precisely. In this example, it is not necessary for a provider to use 15 units of budget; she only needs 14 units to achieve the same quality.  
+                  </p>
+             </div>
+              
+        </section>
+         
+         
+         <section id="Optimal Strategy">
+	         <div class="page-header">
+	         <h1>Optimal Strategy</h1></div>
+			       <div id="myCarousel" class="carousel slide" style="background-color: #CCCCCC;" align="center">  
+			            <!-- Carousel items -->  
+			          <div class="carousel-inner">  
+			        <div class="active item"><img src="./Jury/1.jpg" width="70%"></div>  
+                    <div class="item"><img src="./Jury/2.jpg" width="70%"></div>  
+			        <div class="item"><img src="./Jury/3.jpg" width="70%"></div>  
+			        <div class="item"><img src="./Jury/4.jpg" width="70%"></div>  
+                    <div class="item"><img src="./Jury/5.jpg" width="70%"></div>  
+			          </div>  
+			           <!-- Carousel nav -->  
+			           <a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>  
+			           <a class="carousel-control right" href="#myCarousel" data-slide="next">›</a>  
+		           </div> 
+                   <p style="line-height:25px;font-size:20px;text-indent:2em">
+                   For the Jury Quality (JQ), as it is closely related to voting strategies and given a jury set, different strategies may have different JQ. We first systematically classify all strategies into two categories (Page 1), and then prove the existence of the optimal strategy, which is the Bayesian Voting (BV) Strategy (Page 2). Even though computing JQ for BV is NP-hard (Page 3), we give a bucket-based approximation algorithm (Page 4), and the approximation error bound of the  polynomial algorithm is bounded within 1% (Page 5).
+                   </p>
+         </section>
+         
+         
+          <section id="JSP">
+              <div class="page-header">
+                  <hr><h1>Jury Selection Problem (JSP)</h1><hr>
+                  
+                  <p style="line-height:25px;font-size:20px;text-indent:2em">
+                  Before formally addressing the JSP for BV, we first prove two monotonicity properties which help us to deal with the conditions that jurors have specific cost requirements. 
+                  </p>
+                  
+                  <center><img src="./Jury/jury size.jpg" alt="juror" width="50%"></center> 
+                  
+                  <p style="line-height:25px;font-size:20px;text-indent:2em">
+                  A direct consequence of monotonicity on jury size is that “the more jurors, the better JQ for BV”. So for the case that each juror will contribute voluntarily or the budget constraint satisfies on all candidate jurors in W, we can select all jurors in W.
+                  </p>
+                  
+                  <center><img src="./Jury/juror quality.jpg" alt="juror" width="50%"></center> 
+                  
+                  <p style="line-height:25px;font-size:20px;text-indent:2em">
+                  Intuitively, monotonicity on juror quality tells us that a juror with higher quality contributes not less in JQ compared with a lower quality juror. Thus for the case that each juror has the same cost requirement c, then we can select the top-k jurors by their quality, where k is constrained by B, c and N.
+                  </p>
+                   
+                  <p style="line-height:25px;font-size:20px;text-indent:2em">
+                  For a more general case, that is, there is no constraint on juror quality, we can prove that solving it is NP-hard. To formally address it, we apply the simulated annealing heuristic, a well-known technique which is successful in many discrete combinatorial optimization problems and develop local search technique to support it.
+                  </p>
+                  
+              </div>
+          </section>
+          
+          
+          
+          <section id="Extensions">
+              <div class="page-header">
+                  <hr><h1>Extensions</h1><hr>
+                  
+                 <p style="line-height:25px;font-size:20px;">
+                 Previously we have talked about how to solve JSP under two assumptions: 
+                 </p>
+                 <p style="line-height:25px;font-size:20px;text-indent:2em">
+                 1) it is decision-making task with binary answer, and 
+                 </p>
+                 <p style="line-height:25px;font-size:20px;text-indent:2em">
+                 2) each juror’s quality is modelled as a constant. 
+                 </p>
+                 
+                 <p style="line-height:25px;font-size:20px;">
+                 However, in reality, it is common for task provider to ask multiple label tasks. 
+                 </p>
+                 <p style="line-height:25px;font-size:20px;">
+                 For example, sentiment analysis tasks require jurors to label the sentiment (positive, neutral, or negative) of each task. An example is as below:                 
+                 </p>
+                 <center><img src="./Jury/sentiment analysis.jpg" alt="SA" width="20%"></center>  
+                 <p style="line-height:25px;font-size:20px;">
+                 In addition, the juror’s quality can be modelled by measuring the sensitivity and specificity of each possible answer, or a more general confusion matrix (CM). Specifically, a confusion matrix is a matrix C of size "L*L" where L is the number of labels and each element Cjk encodes the probability that the juror gives label k as an answer when the true label is j. An example CM with L=2 is as follows: 
+                 </p> 
+                 <center><img src="./Jury/CM.jpg" alt="SA" width="20%"></center>  
+                 
+                 <p style="line-height:25px;font-size:20px;">
+                 We formally extend our solution for more general task and juror model by addressing the following three problems:
+                 </p>
+                 
+                 <p style="line-height:25px;font-size:20px;text-indent:2em">
+                 (a) whether the optimal strategy (or BV) is still optimal or not; 
+                 </p>
+                 <p style="line-height:25px;font-size:20px;text-indent:2em">
+                 (b) how to compute JQ for BV by extending the bucket-based approximation algorithm; 
+                 </p>
+                 <p style="line-height:25px;font-size:20px;text-indent:2em">
+                 (c) how to solve the JSP, and whether the two monotonicity properties still hold or not.
+                 </p>
+                
+                <p style="line-height:25px;font-size:20px;">
+                *Interested Reader can refer to the full version (in "Works" section below) for more details.
+                </p>
+                
+              </div>
+          </section>
+          
+      <section id="Experiments">
+              <div class="page-header">
+                  <hr><h1>Experiments</h1><hr>
+                  
+                 <p style="line-height:25px;font-size:20px;text-indent:2em">
+                 We perform End-to-End system experiment with the existing work. Since [1] "C. C. Cao, J. She, Y. Tong, and L. Chen. Whom to ask? jury selection for decision making tasks on micro-blog services. PVLDB, 5(11):1495–1506, 2012" is the only existing work we are aware of, who formally addresses JSP for Majority Voting strategy, we call it Majority Voting Jury Selection (MVJS). We similarly denote our system as "BVJS" and we perform system comparison on both synthetic data and real dataset collected from AMT (which provides more statistics on exact juror quality, so we do not have to vary the juror quality as what the synthetic data does).
+                 </p>
+                 
+                 <p style="line-height:25px;font-size:20px;text-indent:2em">
+                 Experiments on Synthetic data:
+                 </p>
+                 
+                 <center><img src="./Jury/expsimulated.jpg" alt="exp" width="100%"></center>  
+                 
+                 <p style="line-height:25px;font-size:20px;text-indent:2em">
+                 Experiments on Real data (note that you can contact us to get the real dataset, see the "About" section below):
+                 </p>
+                 
+                 <center><img src="./Jury/expreal.jpg" alt="exp" width="65%"></center>  
+                 
+                 <p style="line-height:25px;font-size:20px;text-indent:2em">
+                 Experiments show that BVJS are consistently better than MVJS on both synthetic and real datasets by varying parameters. 
+                 </p>
+                
+              </div>
+      </section>
+          
+      <section id="Works">
+              <div class="page-header">
+              <h1>Works</h1><hr>
+              <p style="line-height:25px;font-size:20px">
+              Yudian Zheng, Reynold Cheng, Silviu Maniu, Luyi Mo. <a href="http://i.cs.hku.hk/~ydzheng2/Jury/Jury-EDBT.pdf"> On Optimality of Jury Selection in Crowdsourcing</a>. <br>In International Conference on Extending Database Technology (EDBT), 2015, March 23-27, Brussels, Belgium. <br> [<a href="http://i.cs.hku.hk/~ydzheng2/Jury/Jury.pdf" target="_blank">Full Version</a>] [<a href="http://i.cs.hku.hk/~ydzheng2/Jury/Jury-slides.pdf" target="_blank">Slides</a>]
+              </p>
+              </div>
+     </section>
+          
+          
+          
+          <section id="About">
+            <div class="page-header">
+                  <h1>About</h1><hr>
+                  <p style="line-height:25px;font-size:20px">
+                  Optimal Jury Selection System is being developed by Yudian Zheng.
+                  </p>
+                      <br>
+                  <p style="line-height:25px;font-size:20px">
+                      If you have any comments or questions,
+                  </p>
+                  <p style="line-height:25px;font-size:20px">
+                      please feel free to email us at: <a href="mailto:ydzheng2@cs.hku.hk">ydzheng2 [AT] cs.hku.hk</a>.
+                 <br><br>
+                  </p>
+             </div>
+          </section>
+
+
+    </div>
+	
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./Jury/jquery.js"></script>
+    <script src="./Jury/bootstrap-transition.js"></script>
+    <script src="./Jury/bootstrap-alert.js"></script>
+    <script src="./Jury/bootstrap-modal.js"></script>
+    <script src="./Jury/bootstrap-dropdown.js"></script>
+    <script src="./Jury/bootstrap-scrollspy.js"></script>
+    <script src="./Jury/bootstrap-tab.js"></script>
+    <script src="./Jury/bootstrap-tooltip.js"></script>
+    <script src="./Jury/bootstrap-popover.js"></script>
+    <script src="./Jury/bootstrap-button.js"></script>
+    <script src="./Jury/bootstrap-collapse.js"></script>
+    <script src="./Jury/bootstrap-carousel.js"></script>
+    <script src="./Jury/bootstrap-typeahead.js"></script>
+
+  
+
+
+</body></html>
