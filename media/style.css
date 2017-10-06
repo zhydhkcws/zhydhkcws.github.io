@@ -2,7 +2,7 @@ body {
 	font-size: 16px;
 	font-weight:400;
 	/*color: #6E6D6D;	*/
-	color: #606860;	
+	color: #222222;	
 	font:italic arial,sans-serif;
 }
 .container {
@@ -10,11 +10,11 @@ body {
 }
 
 a {
-	color: #00BFFF;
+	color: #0007FF;
 }
 
 a:visited {
-	color: #00BFFF;
+	color: #0007FF;
 }
 
 mark {
